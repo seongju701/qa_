@@ -63,7 +63,7 @@ def test_payment(page):
 
     # 로그인
     home.click_login_button()
-    login.login_with_kakao("seongju701@naver.com", "whtjdwn1")
+    login.login_with_kakao("seongju701@naver.com", "-")
 
     # 강의 검색 및 장바구니 담기
     home.search_lecture("python")
@@ -74,5 +74,5 @@ def test_payment(page):
     cart.go_to_cart()
     cart.click_payment_button()
     cart.fill_payment_id("seongju701")
-    cart.fill_payment_password("tjdwn111!")
+    cart.fill_payment_password("-")
     cart.click_payment_login()
