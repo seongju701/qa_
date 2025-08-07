@@ -12,15 +12,15 @@ def test_create_id(page):
     home.click_login_button()
     home.click_signup_link()
     signup.fill_email("seongju701@naver.com")
-    signup.fill_password("whtjdwn1")
-    signup.fill_password_confirm("whtjdwn1")
+    signup.fill_password("-")
+    signup.fill_password_confirm("-")
 
 @pytest.mark.order(2)
 def test_login(page):
     home = HomePage(page)
     login = LoginPage(page)
     home.click_login_button()
-    login.login_with_kakao("seongju701@naver.com", "whtjdwn1")
+    login.login_with_kakao("seongju701@naver.com", "-")
     login.go_to_user_dashboard()
     name = login.get_dashboard_name()
     assert "조성주" in name
@@ -42,7 +42,7 @@ def test_search_class(page):
 
     # 로그인
     home.click_login_button()
-    login.login_with_kakao("seongju701@naver.com", "whtjdwn1")
+    login.login_with_kakao("seongju701@naver.com", "-")
 
     # 강의 검색 및 장바구니 담기
     home.search_lecture("python")
